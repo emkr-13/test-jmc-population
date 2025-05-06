@@ -252,3 +252,92 @@ body {
         width: 100%;
     }
 }
+.card {
+    border-radius: 10px;
+    border: none;
+}
+
+.card-header {
+    border-bottom: 1px solid #ddd;
+}
+
+.card {
+    border-radius: 10px;
+    border: none;
+}
+
+.card-header {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Custom Table */
+.table thead th {
+    font-weight: bold;
+    color: #333;
+}
+
+.table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Custom Buttons */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+/* Empty State */
+.text-muted.fst-italic {
+    font-size: 0.9rem;
+}
+.custom-table {
+    background-color: #fff;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.custom-table thead th {
+    font-weight: bold;
+    color: #333;
+    background-color: #e9f7ff; /* Warna header tabel (biru muda) */
+    border: 1px solid #dee2e6;
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #f8fafc; /* Warna baris genap */
+}
+
+.custom-table tbody tr:hover {
+    background-color: #e2efff; /* Warna hover baris */
+}
+
+.custom-table td,
+.custom-table th {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border: 1px solid #dee2e6;
+}
+
+/* Pagination */
+.pagination {
+    justify-content: center;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #0d6efd; /* Warna aktif pagination */
+    border-color: #0d6efd;
+}
+
+.pagination .page-link {
+    color: #0d6efd; /* Warna link pagination */
+}
