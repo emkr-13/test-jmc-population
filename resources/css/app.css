@@ -1,0 +1,254 @@
+/* Base Styles */
+:root {
+    --sidebar-width: 250px;
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--secondary-color);
+    color: white;
+    position: fixed;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar-menu li.active {
+    background: var(--primary-color);
+}
+
+.sidebar-menu li.menu-section {
+    color: #bbb;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 20px;
+    background: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* Dashboard Styles */
+.dashboard-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stats-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.stat-card {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat-card h3 {
+    margin-top: 0;
+    color: #555;
+}
+
+.stat-card p {
+    font-size: 2em;
+    margin: 10px 0 0;
+    color: var(--primary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+}
+
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    z-index: 1000;
+    cursor: pointer;
+    color: var(--secondary-color);
+    background: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Sidebar State */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        z-index: 999;
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content.sidebar-active {
+        margin-left: 0;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+}
+
+/* Filter Dropdown */
+.filter-toggle {
+    cursor: pointer;
+}
+
+.filter-dropdown {
+    display: none;
+    position: absolute;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.filter-dropdown.show {
+    display: block;
+}
+
+.province-card {
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.province-actions {
+    white-space: nowrap;
+}
+
+.province-actions form {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
+
+.regency-filter {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.regency-actions {
+    white-space: nowrap;
+}
+
+.regency-actions form {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .regency-filter .col-md-4 {
+        margin-bottom: 10px;
+    }
+}
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.report-table th {
+    background-color: #343a40;
+    color: white;
+}
+
+.report-table .total-row {
+    background-color: #e6f7ff;
+    font-weight: bold;
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        padding: 20px;
+        font-size: 12px;
+    }
+
+    .report-table {
+        width: 100%;
+    }
+}
